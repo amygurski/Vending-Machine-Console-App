@@ -5,7 +5,7 @@ using Capstone.Products;
 
 namespace Capstone
 {
-    class VendingMachine
+    public class VendingMachine
     {
         private Dictionary<string, VendingMachineItem> products = new Dictionary<string, VendingMachineItem>();
 
