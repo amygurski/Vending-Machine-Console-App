@@ -8,6 +8,8 @@ namespace Capstone
     {
         
         public VendingMachine VM { get; set; }
+
+
         public MainMenu(VendingMachine vm)
         {
             this.VM = vm;
@@ -37,8 +39,8 @@ namespace Capstone
                         DisplayItems(items);
                         break;
                     case "2":
-                        PurchaseMenu pm = new PurchaseMenu();
-                        //pm.DisplayPurchaseMenu();
+                        PurchaseMenu pm = new PurchaseMenu(VM);
+                        pm.DisplayPurchaseMenu();
                         break;
                     default:
                         continue;
@@ -55,11 +57,6 @@ namespace Capstone
             {
                 Console.WriteLine($"Slot: {kvp.Key} Name: {kvp.Value.ProductName} Price: {kvp.Value.Price} Remaining: {kvp.Value.Quantity} Type: {kvp.Value.Type}");
             }
-        }
-
-        public static void GoToPurchaseMenu(PurchaseMenu @goto)
-        {
-
         }
     }
 
