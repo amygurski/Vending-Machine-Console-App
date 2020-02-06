@@ -6,11 +6,13 @@ namespace Capstone
     public class Program
     {
         static void Main(string[] args)
-        { //read stock 
+        {
+            Stocker stocker = new Stocker();
+            string[] stock = stocker.GetStock();
 
-          //create new vending machine
-            
-            Console.WriteLine("Hello World!");
+            VendingMachine vm = new VendingMachine();
+            vm.FillSlots(stock);
+
         }
     }
 }
