@@ -2,24 +2,28 @@
 using System.Collections.Generic;
 using System.Text;
 using Capstone.Products;
+using Capstone.IO;
 
 namespace Capstone
 {
-    class VendingMachine
+    public class VendingMachine
     {
-        private Dictionary<string, VendingMachineItem> products = new Dictionary<string, VendingMachineItem>();
+        Stocker stocker = new Stocker();
+        private Dictionary<string, VendingMachineItem> inventory = new Dictionary<string, VendingMachineItem>();
 
-        public void FillSlots(string[] stock)
+        public void FillSlots()
         {
-            foreach (string item in stock)
+            string[] stockList = stocker.GetStock();
+            foreach (string item in stockList)
             {
                 string[] line = item.Split("|");
+                inventory.Add(line[0], new VendingMachineItem(line[1], decimal.Parse(line[2]), line[3]));
             }
-            //product.Add(arr[0], )
-            //Loop through file
-            //If type = chip, make a chip object 
-            //Chip properties are split string for slotID, Name, and Price
-            //Same for Gum, candy, beverage
+        }
+
+        public void DisplayItems()
+        {
+            
         }
 
     }

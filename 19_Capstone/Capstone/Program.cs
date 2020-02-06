@@ -7,11 +7,8 @@ namespace Capstone
     {
         static void Main(string[] args)
         {
-            Stocker stocker = new Stocker();
-            string[] stock = stocker.GetStock();
-
             VendingMachine vm = new VendingMachine();
-            vm.FillSlots(stock);
+            vm.FillSlots();
 
         }
     }
