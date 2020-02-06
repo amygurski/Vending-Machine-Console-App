@@ -1,11 +1,15 @@
 ﻿using System;
+using System.IO;
 
 namespace Capstone
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
-        {
+        { //read stock 
+
+          //create new vending machine
+            
             Console.WriteLine("Hello World!");
         }
     }
