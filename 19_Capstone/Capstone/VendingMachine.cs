@@ -7,25 +7,23 @@ namespace Capstone
     public class VendingMachine
     {
         Stocker stocker = new Stocker();
-        private Dictionary<string, VendingMachineItem> inventory = new Dictionary<string, VendingMachineItem>();
+
+        public Dictionary<string, VendingMachineItem> Inventory { get; } = new Dictionary<string, VendingMachineItem>();
 
         public void FillSlots()
         {
             string[] stockList = stocker.GetStock();
-            foreach (string item in stockList)
+            foreach (string line in stockList)
             {
-                string[] line = item.Split("|");
-                inventory.Add(line[0], new VendingMachineItem(line[1], decimal.Parse(line[2]), line[3]));
+                string[] item = line.Split("|");
+                Inventory.Add(item[0], new VendingMachineItem(item[1], decimal.Parse(item[2]), item[3]));
             }
         }
 
-        public void DisplayItems()
-        {
-            foreach (KeyValuePair<string,VendingMachineItem> kvp in inventory)
-            {
+        //public Dictionary<string, VendingMachineItem> GetItems()
+        //{
 
-            }
-        }
+        //}
 
     }
 

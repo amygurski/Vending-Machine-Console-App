@@ -1,5 +1,4 @@
-﻿using Capstone.Products;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,10 +7,10 @@ namespace Capstone
     public class VendingMachineItem
     {
         #region Properties
-        string ProductName { get; set; }
-        decimal Price { get; set; }
-        int Quantity { get; set; }
-        string Type { get; set; }
+        public string ProductName { get; set; }
+        public decimal Price { get; set; }
+        public int Quantity { get; set; }
+        public string Type { get; set; }
         #endregion
 
         #region Constructors

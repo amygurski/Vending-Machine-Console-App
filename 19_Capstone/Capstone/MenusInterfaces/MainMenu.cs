@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Capstone.Products
+namespace Capstone
 {
     public class MainMenu
     {
+        
         public VendingMachine VM { get; set; }
         public MainMenu(VendingMachine vm)
         {
@@ -31,19 +32,30 @@ namespace Capstone.Products
                     case "3":
                         keepGoing = false;
                         continue;
-                    //case "1":
-                        VM.DisplayItems(); 
+                    case "1":
+                        Dictionary<string, VendingMachineItem> items = VM.Inventory;
+                        DisplayItems(items);
+                        break;
                     case "2":
-                        //GoToPurchaseMenu(); //build error here
+                        PurchaseMenu pm = new PurchaseMenu();
+                        //pm.DisplayPurchaseMenu();
                         break;
                     default:
                         continue;
                 }
 
-
+                Console.ReadLine();
             }
         }
-   
+
+        public void DisplayItems(Dictionary<string, VendingMachineItem> items)
+        {
+
+            foreach (KeyValuePair<string, VendingMachineItem> kvp in items)
+            {
+                Console.WriteLine($"Slot: {kvp.Key} Name: {kvp.Value.ProductName} Price: {kvp.Value.Price} Remaining: {kvp.Value.Quantity} Type: {kvp.Value.Type}");
+            }
+        }
 
         public static void GoToPurchaseMenu(PurchaseMenu @goto)
         {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Capstone.Products
+namespace Capstone
 {
     public class PurchaseMenu
     { //when option (2) selected from MainMenu

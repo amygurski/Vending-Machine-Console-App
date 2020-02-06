@@ -1,7 +1,4 @@
 ﻿using System;
-using System.IO;
-using Capstone;
-using Capstone.Products;
 
 namespace Capstone
 {
