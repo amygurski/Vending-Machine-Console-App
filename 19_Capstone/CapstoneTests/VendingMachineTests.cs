@@ -14,11 +14,12 @@ namespace CapstoneTests
             VendingMachine vm = new VendingMachine();
 
             //Act
-            vm.FillSlots();
+            vm.FillSlots(new string[] {"A1|Potato Crisps|3.05|Chip" });
 
             //Assert
-            Assert.AreEqual()
-
+            Assert.AreEqual(true, vm.Inventory.ContainsKey("A1"));
+            Assert.AreEqual(false, vm.Inventory.ContainsKey("E3"));
         }
     }
 }
+e
