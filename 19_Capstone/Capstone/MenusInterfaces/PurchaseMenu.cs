@@ -6,7 +6,7 @@ namespace Capstone.Products
 {
     public class PurchaseMenu
     { //when option (2) selected from MainMenu
-        public static void Main(string[] args)
+        public void DisplayPurchaseMenu()
         {
             Console.Clear();
             Console.WriteLine("1) Feed Money");

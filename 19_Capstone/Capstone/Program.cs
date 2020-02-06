@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using Capstone;
+using Capstone.Products;
 
 namespace Capstone
 {
@@ -9,7 +11,8 @@ namespace Capstone
         {
             VendingMachine vm = new VendingMachine();
             vm.FillSlots();
-
+            MainMenu menu = new MainMenu(vm);
+            menu.DisplayMainMenu();
         }
     }
 }

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Capstone.Products;
-using Capstone.IO;
 
 namespace Capstone
 {
@@ -23,7 +21,10 @@ namespace Capstone
 
         public void DisplayItems()
         {
-            
+            foreach (KeyValuePair<string,VendingMachineItem> kvp in inventory)
+            {
+
+            }
         }
 
     }
