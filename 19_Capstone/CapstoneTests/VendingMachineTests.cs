@@ -35,7 +35,22 @@ namespace CapstoneTests
 
         }
 
-        // find a way to test DispenseItem()?
+        [TestMethod]
+        public void DispenseItemsTests()
+        {
+            //Arrange
+            VendingMachine vm = new VendingMachine();
+
+            //Act
+            vm.FillSlots(new string[] { "A1|Potato Crisps|3.05|Chip" });
+            vm.DispenseItem("A1"); 
+
+            //Assert
+            Assert.AreEqual(4, vm.Inventory["A1"].Quantity);
+            Assert.AreEqual(3.05M, vm.Inventory["A1"].Price);
+            Assert.AreEqual(-3.05M, vm.Balance);
+
+        }
 
     }
 }
