@@ -27,15 +27,25 @@ namespace Capstone
 
         public void DispenseItem(string selection)
         {
+
             Balance -= Inventory[selection].Price;
-            //TODO: Check enough remaining, print SOLD OUT when out
             Inventory[selection].Quantity--;
+
+
             Auditor.Audit($"{Inventory[selection].ProductName} {selection} {Balance + Inventory[selection].Price} {Balance:C}");
         }
 
-        public void FeedMoney(int money)
+        public void FeedMoney(int money = 1)
+        //TODO return error for negative number
         {
-            Balance += money;
+            if (Balance <= 0)
+            {
+                Console.WriteLine($"Your balance is currently zero. Please FEED MONEY to continue.");
+            }
+            else
+            {
+                Balance += money;
+            }
             Auditor.Audit($"FEED MONEY {money:C} {Balance:C}");
         }
 

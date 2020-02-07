@@ -11,8 +11,8 @@ namespace Capstone
     public class PurchaseMenu : MainMenu
     {
         #region Constructor
-        public PurchaseMenu(VendingMachine vm) : base(vm) 
-        { 
+        public PurchaseMenu(VendingMachine vm) : base(vm)
+        {
         }
         #endregion
 
@@ -25,7 +25,7 @@ namespace Capstone
             {
                 Console.Clear();
                 DisplayLogo();
-                
+
                 Console.WriteLine("1) Feed Money"); // allow user to input whole dollar amount repeatedly
                 Console.WriteLine("2) Select Product"); //Display items & allow user to select using sortId
                 Console.WriteLine("3) Finish Transaction");
@@ -79,6 +79,11 @@ namespace Capstone
             {
                 Console.WriteLine("Out of stock. Please make a different selection.");
             }
+            else if (VM.Balance < items[selection].Price)
+            {
+                Console.WriteLine($"Sorry! You have insufficient funds. Please try again");
+
+            }
             else
             {
                 VM.DispenseItem(selection);
@@ -96,7 +101,7 @@ namespace Capstone
             Console.WriteLine($"Press Enter to Return to Menu.");
         }
 
-        
+
         public int GetUsersPayment()
         {
             Console.Write("Please deposit money from your bank (whole dollar only): ");
