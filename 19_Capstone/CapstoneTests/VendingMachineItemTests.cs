@@ -13,14 +13,14 @@ namespace CapstoneTests
         public void UpdateQuantity()
 
         {
-            //Arrange
-            VendingMachine vm = new VendingMachine();
+            ////Arrange
+            //VendingMachine vm = new VendingMachine();
 
-            //Act
+            ////Act
 
 
-            //Assert
-            Assert.AreEqual());
+            ////Assert
+            //Assert.AreEqual());
 
         }
 
