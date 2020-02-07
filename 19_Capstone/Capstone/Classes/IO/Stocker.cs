@@ -11,15 +11,35 @@ namespace Capstone
     /// </summary>
     public class Stocker
     {
-        //TODO: Add error handling if stock file not found
+        
         public string[] GetStock()
         {
             string inputfile = "vendingmachine.csv";
             string[] stock;
-
-            stock = File.ReadAllLines(Environment.CurrentDirectory + "\\" + inputfile);
-
-            return stock;
+            try 
+            { 
+                stock = File.ReadAllLines(Environment.CurrentDirectory + "\\" + inputfile);        
+                return stock;
+            }
+            catch
+            {
+                Console.WriteLine(@"
+  /$$$$$$  /$$   /$$ /$$$$$$$$        /$$$$$$  /$$$$$$$$        /$$$$$$  /$$$$$$$  /$$$$$$$  /$$$$$$$$ /$$$$$$$ 
+ /$$__  $$| $$  | $$| __  $$__ /     /$$__  $$| $$_____ /      /$$__  $$| $$__  $$| $$__  $$| $$_____ /|$$__  $$
+| $$  \ $$| $$  | $$   | $$         | $$  \ $$| $$            | $$  \ $$| $$  \ $$| $$  \ $$| $$      | $$  \ $$
+| $$  | $$| $$  | $$   | $$         | $$  | $$| $$$$$         | $$  | $$| $$$$$$$/| $$  | $$| $$$$$   | $$$$$$$/
+| $$  | $$| $$  | $$   | $$         | $$  | $$| $$__/         | $$  | $$| $$__  $$| $$  | $$| $$__/   | $$__  $$
+| $$  | $$| $$  | $$   | $$         | $$  | $$| $$            | $$  | $$| $$  \ $$| $$  | $$| $$      | $$  \ $$
+|  $$$$$$/|  $$$$$$/   | $$         |  $$$$$$/| $$            |  $$$$$$/| $$  | $$| $$$$$$$/| $$$$$$$$| $$  | $$
+ \______/  \______/    |__/          \______/ |__/             \______/ |__/  |__/|_______/ |________/|__/  |__/
+                                                                                                                
+                                                                                                                
+                                                                                                                
+");
+                Console.ReadLine();
+  
+            }
+            return new string[] {  };
         }
        
     }
