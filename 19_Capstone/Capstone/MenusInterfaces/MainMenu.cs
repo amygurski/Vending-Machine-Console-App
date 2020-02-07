@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace Capstone
 {
     public class MainMenu
@@ -41,6 +42,10 @@ namespace Capstone
                     case "2":
                         PurchaseMenu pm = new PurchaseMenu(VM);
                         pm.DisplayPurchaseMenu();
+                        break;
+                    case "4":
+                        SalesReporter.Report(VM.Inventory);
+                        Console.WriteLine($"A sales report has been generated");
                         break;
                     default:
                         continue;

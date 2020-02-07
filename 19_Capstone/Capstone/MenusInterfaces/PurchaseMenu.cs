@@ -79,9 +79,11 @@ namespace Capstone
         {
             Console.Clear();
             Balance -= items[selection].Price;
+            items[selection].Quantity -= 1;
             Console.WriteLine($"{items[selection].ProductName} is yours for only {items[selection].Price}.");
             Console.WriteLine($"{items[selection].PurchaseMessage}");
             Console.WriteLine($"You have {Balance} remaining - can we tempt you with anything else?");
+            Auditor.Audit($"{items[selection].ProductName} {selection} {Balance + items[selection].Price:C} {Balance:C}");
         }
 
         public void FeedMoney()
@@ -95,8 +97,9 @@ namespace Capstone
             }
 
             Balance += value;
+            Auditor.Audit($"FEED MONEY {value:C} {Balance:C}");
         }
+
+        //implement Auditor.Audit for GiveChange here or on the MoneyChanger
     }
-
 }
-
