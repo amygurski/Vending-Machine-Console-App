@@ -85,16 +85,15 @@ namespace Capstone
             else
             {
                 VM.DispenseItem(selection);
-                DisplayDispenseMessage(selection, items);
+                DisplayDispenseMessage(selection, items[selection]);
             }
         }
 
-        //TODO: How to pass in ONLY the single dictionary value items[selection]?
-        public void DisplayDispenseMessage(string selection, Dictionary<string, VendingMachineItem> items)
+        public void DisplayDispenseMessage(string selection, VendingMachineItem item)
         {
             Console.Clear();
-            Console.WriteLine($"{items[selection].ProductName} is yours for only {items[selection].Price:C}.");
-            Console.WriteLine($"{items[selection].PurchaseMessage}");
+            Console.WriteLine($"{item.ProductName} is yours for only {item.Price:C}.");
+            Console.WriteLine($"{item.PurchaseMessage}");
             Console.WriteLine($"You have {VM.Balance:C} remaining - can we tempt you with anything else?");
             Console.WriteLine($"Press Enter to Return to Menu.");
         }
