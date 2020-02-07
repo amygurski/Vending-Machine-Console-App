@@ -4,6 +4,10 @@ using System.Text;
 
 namespace Capstone
 {
+    /// <summary>
+    /// Vending machine item that is stocked in the vending machine
+    /// Starts with 5 of each item and reduces as purchased
+    /// </summary>
     public class VendingMachineItem
     {
         #region Properties
@@ -43,9 +47,9 @@ namespace Capstone
         #endregion
 
         #region Methods
-        public int UpdateQuantity()
+        public void UpdateQuantity()
         {
-            return 5;
+            this.Quantity -= 1;
         }
 
         #endregion

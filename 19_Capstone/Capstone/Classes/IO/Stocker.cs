@@ -5,6 +5,10 @@ using System.IO;
 
 namespace Capstone
 {
+    /// <summary>
+    /// Stocks Vending Machine Inventory from provided file.
+    /// The file is expected to be in the current working directory.
+    /// </summary>
     public class Stocker
     {
         //TODO: Add error handling if stock file not found
@@ -13,7 +17,6 @@ namespace Capstone
             string inputfile = "vendingmachine.csv";
             string[] stock;
 
-            //TODO: Add error handling if stock file not found
             stock = File.ReadAllLines(Environment.CurrentDirectory + "\\" + inputfile);
 
             return stock;
