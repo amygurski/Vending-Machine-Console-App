@@ -19,7 +19,6 @@ namespace Capstone
         public void DisplayMainMenu()
 
         {
-            //TODO: Check main menu selection valid
             bool keepGoing = true;
             while (keepGoing)
             {
@@ -50,10 +49,8 @@ namespace Capstone
                         Console.WriteLine($"A sales report has been generated");
                         break;
                     default:
-                        DisplayOops();
                         Console.WriteLine("Invalid Menu Option. Please try again.");
                         break;
-                        //TODO: What to do if invalid selection?
                 }
                 Console.ReadLine();
             }
@@ -73,7 +70,7 @@ namespace Capstone
 
         public void DisplayLogo()
         {
-            //TODO (Low priority): Add Umbrella Logo
+            //TODO (Low priority): Add Umbrella Logo somewhere. With errors? Unicode?
         Console.WriteLine(@"
         ___    __                        ______  ___      __________           _____________________ 
         __ |  / /_________________       ___   |/  /_____ __  /___(_)______    __( __ )_  __ \_  __ \
@@ -85,10 +82,6 @@ namespace Capstone
 
         }
 
-        public void DisplayOops()
-        {
-            Console.WriteLine(@"\u¯\_(ツ)_ /¯");
-        }
     }
 
 }

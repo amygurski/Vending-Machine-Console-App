@@ -25,6 +25,7 @@ namespace Capstone
             {
                 Console.Clear();
                 DisplayLogo();
+                
                 Console.WriteLine("1) Feed Money"); // allow user to input whole dollar amount repeatedly
                 Console.WriteLine("2) Select Product"); //Display items & allow user to select using sortId
                 Console.WriteLine("3) Finish Transaction");
@@ -36,26 +37,24 @@ namespace Capstone
 
                 switch (input)
                 {
-                    case "1":
+                    case "1": //Feedmoney
                         int money = GetUsersPayment();
                         VM.FeedMoney(money);
                         continue;
-                    case "2":
+                    case "2": //Select product
                         Dictionary<string, VendingMachineItem> items = VM.Inventory;
                         DisplayItems(items);
-                        Console.Write("Please select item: ");
-                        string selection = Console.ReadLine().ToUpper();
-                        VM.DispenseItem(selection);
-                        DisplayDispenseMessage(selection, items);
+                        SelectItem(items);
                         break;
-                    case "3":
+                    case "3": //Finish Transaction
                         MoneyChanger change = new MoneyChanger(VM.Balance);
                         VM.MakeChange();
                         PrintChange(change);
                         keepGoing = false;
-                        //TODO: Return to Main Menu?
                         break;
                     default:
+                        Console.WriteLine("Invalid Menu Option. Please try again.");
+                        break;
                         continue;
                 }
 
@@ -67,22 +66,27 @@ namespace Capstone
 
         }
 
-        //TODO: Check that item selection is valid.
-        //public void CheckSelection(string selection, Dictionary <string, VendingMachineItem> items)
-        //{
-        //    if (!items.ContainsKey(selection))
-        //    {
-        //        Console.WriteLine("Sorry! Invalid Selection. Please try again.");
-        //    }
+        public void SelectItem(Dictionary<string, VendingMachineItem> items)
+        {
+            Console.Write("Please select item: ");
+            string selection = Console.ReadLine().ToUpper();
 
-        //    if (items[selection].Quantity < 1)
-        //    {
-        //        Console.WriteLine("Sorry! Out of stock. Please try again.");
-        //    }
-        //}
+            if (!items.ContainsKey(selection))
+            {
+                Console.WriteLine("Invalid Selection. Try again.");
+            }
+            else if (items[selection].Quantity < 1)
+            {
+                Console.WriteLine("Out of stock. Please make a different selection.");
+            }
+            else
+            {
+                VM.DispenseItem(selection);
+                DisplayDispenseMessage(selection, items);
+            }
+        }
 
         //TODO: How to pass in ONLY the single dictionary value items[selection]?
-        //TODO: Check main menu selection valid
         public void DisplayDispenseMessage(string selection, Dictionary<string, VendingMachineItem> items)
         {
             Console.Clear();
@@ -98,7 +102,6 @@ namespace Capstone
             Console.Write("Please deposit money from your bank (whole dollar only): ");
             string input = Console.ReadLine();
 
-            //TODO: Move feed money - whole dollars - to exception handling
             //TODO: Add exceptions to Feed Money for negative numbers and maybe a maximum value (sum of price of items?). 
             if (!int.TryParse(input, out int value))
             {
