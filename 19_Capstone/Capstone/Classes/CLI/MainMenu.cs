@@ -19,6 +19,7 @@ namespace Capstone
         public void DisplayMainMenu()
 
         {
+            //TODO: Check main menu selection valid
             bool keepGoing = true;
             while (keepGoing)
             {
@@ -41,15 +42,16 @@ namespace Capstone
                         PurchaseMenu pm = new PurchaseMenu(VM);
                         pm.DisplayPurchaseMenu();
                         break;
+                    case "3":
+                        keepGoing = false;
+                        continue;
                     case "4":
                         SalesReporter.Report(VM.Inventory);
                         Console.WriteLine($"A sales report has been generated");
                         break;
-                    case "3":
-                        keepGoing = false;
-                        break;
                     default:
                         continue;
+                        //TODO: What to do if invalid selection?
                 }
                 Console.ReadLine();
             }

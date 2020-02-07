@@ -44,14 +44,13 @@ namespace Capstone
                         DisplayItems(items);
                         Console.Write("Please select item: ");
                         string selection = Console.ReadLine().ToUpper();
-
                         VM.DispenseItem(selection);
                         DisplayDispenseMessage(selection, items);
                         break;
                     case "3":
                         MoneyChanger change = new MoneyChanger(VM.Balance);
+                        VM.MakeChange();
                         PrintChange(change);
-                        VM.Balance = 0;
                         keepGoing = false;
                         //TODO: Return to Main Menu?
                         break;
@@ -82,10 +81,10 @@ namespace Capstone
         //}
 
         //TODO: How to pass in ONLY the single dictionary value items[selection]?
+        //TODO: Check main menu selection valid
         public void DisplayDispenseMessage(string selection, Dictionary<string, VendingMachineItem> items)
         {
             Console.Clear();
-            //Balance -= items[selection].Price;
             Console.WriteLine($"{items[selection].ProductName} is yours for only {items[selection].Price:C}.");
             Console.WriteLine($"{items[selection].PurchaseMessage}");
             Console.WriteLine($"You have {VM.Balance:C} remaining - can we tempt you with anything else?");

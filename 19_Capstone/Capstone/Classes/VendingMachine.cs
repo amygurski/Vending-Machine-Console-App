@@ -30,11 +30,20 @@ namespace Capstone
             Balance -= Inventory[selection].Price;
             //TODO: Check enough remaining, print SOLD OUT when out
             Inventory[selection].Quantity--;
+            Auditor.Audit($"{Inventory[selection].ProductName} {selection} {Balance + Inventory[selection].Price} {Balance:C}");
         }
 
         public void FeedMoney(int money)
         {
             Balance += money;
+            Auditor.Audit($"FEED MONEY {money:C} {Balance:C}");
+        }
+
+        public void MakeChange()
+        {
+            decimal balanceToResurn = Balance;
+            Balance = 0;
+            Auditor.Audit($"MAKE CHANGE {balanceToResurn:C} {Balance:C}");
         }
         #endregion
     }

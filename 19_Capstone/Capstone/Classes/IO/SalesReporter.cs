@@ -8,15 +8,15 @@ namespace Capstone
 {
     public static class SalesReporter
     {
+        /// <summary>
+        /// Sales report reports total sales for each session
+        /// </summary>
+        /// <param name="inventory"></param>
         public static void Report(Dictionary<string, VendingMachineItem> inventory)
         {
             decimal totalSales = 0m;
-            // start with current directory
-            string currentDirectory = Directory.GetCurrentDirectory();
-            // find target directory
-            string targetDirectory = currentDirectory.Remove(currentDirectory.IndexOf("19_Capstone") + 11);
-            // add file name to path
-            using (StreamWriter sw = new StreamWriter(targetDirectory + $"\\{DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss")}_SalesReport.txt"))
+
+            using (StreamWriter sw = new StreamWriter(Environment.CurrentDirectory + $"\\{DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss")}_SalesReport.txt"))
             {
                 foreach (KeyValuePair<string, VendingMachineItem> inventoryItem in inventory)
                 {
