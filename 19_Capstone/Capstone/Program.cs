@@ -6,6 +6,7 @@ namespace Capstone
     {
         static void Main(string[] args)
         {
+            Console.SetWindowSize(120, 40);
             Stocker stocker = new Stocker();
             string[] stockList = stocker.GetStock();
 

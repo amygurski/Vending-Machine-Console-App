@@ -24,6 +24,7 @@ namespace Capstone
             while (keepGoing)
             {
                 Console.Clear();
+                DisplayLogo();
                 Console.WriteLine("1) Feed Money"); // allow user to input whole dollar amount repeatedly
                 Console.WriteLine("2) Select Product"); //Display items & allow user to select using sortId
                 Console.WriteLine("3) Finish Transaction");

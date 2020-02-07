@@ -50,7 +50,9 @@ namespace Capstone
                         Console.WriteLine($"A sales report has been generated");
                         break;
                     default:
-                        continue;
+                        DisplayOops();
+                        Console.WriteLine("Invalid Menu Option. Please try again.");
+                        break;
                         //TODO: What to do if invalid selection?
                 }
                 Console.ReadLine();
@@ -59,20 +61,33 @@ namespace Capstone
 
         public void DisplayItems(Dictionary<string, VendingMachineItem> items)
         {
-            Console.WriteLine("\n  ------------------------------------------------");
-            Console.WriteLine("  |{0, 0} | {1,-20} | {2,5} | {3,8} |", "ID", "Item", "Price", "Remaining");
-            Console.WriteLine("  ------------------------------------------------");
+            Console.WriteLine("\n\t\t------------------------------------------------");
+            Console.WriteLine("\t\t|{0, 0} | {1,-20} | {2,5} | {3,8} |", "ID", "Item", "Price", "Remaining");
+            Console.WriteLine("\t\t------------------------------------------------");
             foreach (KeyValuePair<string, VendingMachineItem> kvp in items)
             {
-                Console.WriteLine($"  |{kvp.Key, 0} | {kvp.Value.ProductName, -20} | {kvp.Value.Price, 5} | {kvp.Value.Quantity, 5}     |");
+                Console.WriteLine($"\t\t|{kvp.Key, 0} | {kvp.Value.ProductName, -20} | {kvp.Value.Price, 5:C} | {kvp.Value.Quantity, 5}     |");
             }
-            Console.WriteLine("  ------------------------------------------------");
+            Console.WriteLine("\t\t------------------------------------------------");
         }
 
         public void DisplayLogo()
         {
-            //TODO: Add nice header for Vendo-Matic 800
-            //Used http://patorjk.com/software/taag/ previously
+            //TODO (Low priority): Add Umbrella Logo
+        Console.WriteLine(@"
+        ___    __                        ______  ___      __________           _____________________ 
+        __ |  / /_________________       ___   |/  /_____ __  /___(_)______    __( __ )_  __ \_  __ \
+        __ | / /_  _ \_  __ \  __ \________  /|_/ /_  __ `/  __/_  /_  ___/    _  __  |  / / /  / / /
+        __ |/ / /  __/  / / / /_/ //_____/  /  / / / /_/ // /_ _  / / /__      / /_/ // /_/ // /_/ / 
+        _____/  \___//_/ /_/\____/       /_/  /_/  \__,_/ \__/ /_/  \___/      \____/ \____/ \____/  
+                                                                                             
+        ");
+
+        }
+
+        public void DisplayOops()
+        {
+            Console.WriteLine(@"\u¯\_(ツ)_ /¯");
         }
     }
 
