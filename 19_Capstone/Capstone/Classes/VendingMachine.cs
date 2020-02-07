@@ -36,7 +36,6 @@ namespace Capstone
         }
 
         public void FeedMoney(int money = 1)
-        //TODO return error for negative number
         {
             if (Balance <= 0)
             {

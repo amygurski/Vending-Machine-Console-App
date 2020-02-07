@@ -107,10 +107,15 @@ namespace Capstone
             Console.Write("Please deposit money from your bank (whole dollar only): ");
             string input = Console.ReadLine();
 
-            //TODO: Add exceptions to Feed Money for negative numbers and maybe a maximum value (sum of price of items?). 
+
+            //TODO: Add exceptions to Feed Money for negative numbers. 
             if (!int.TryParse(input, out int value))
             {
                 Console.WriteLine("Feed error. Whole Dollar amount required. Please retry.");
+            }
+            if (value <0)
+            {
+                Console.WriteLine($"FEED ERROR! Please enter a whole dollar amount.");
             }
 
             Console.WriteLine($"{value:C} added.");
