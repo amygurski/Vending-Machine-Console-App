@@ -62,8 +62,19 @@ namespace Capstone
             Console.WriteLine("\t\t|{0, 0} | {1,-20} | {2,5} | {3,8} |", "ID", "Item", "Price", "Remaining");
             Console.WriteLine("\t\t------------------------------------------------");
             foreach (KeyValuePair<string, VendingMachineItem> kvp in items)
+            
             {
-                Console.WriteLine($"\t\t|{kvp.Key, 0} | {kvp.Value.ProductName, -20} | {kvp.Value.Price, 5:C} | {kvp.Value.Quantity, 5}     |");
+                string quantity = "";
+               
+                if (kvp.Value.Quantity == 0)
+                {
+                    quantity = "SOLD OUT";
+                }
+            else
+                {
+                   quantity = kvp.Value.Quantity.ToString();
+                }
+                Console.WriteLine($"\t\t|{kvp.Key, 0} | {kvp.Value.ProductName, -20} | {kvp.Value.Price, 5:C} | {quantity, 8}  |");
             }
             Console.WriteLine("\t\t------------------------------------------------");
         }
