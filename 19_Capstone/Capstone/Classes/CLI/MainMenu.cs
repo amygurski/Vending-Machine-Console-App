@@ -81,15 +81,27 @@ namespace Capstone
 
         public void DisplayLogo()
         {
-        Console.WriteLine(@"
-        ___    __                        ______  ___      __________           _____________________ 
-        __ |  / /_________________       ___   |/  /_____ __  /___(_)______    __( __ )_  __ \_  __ \
-        __ | / /_  _ \_  __ \  __ \________  /|_/ /_  __ `/  __/_  /_  ___/    _  __  |  / / /  / / /
-        __ |/ / /  __/  / / / /_/ //_____/  /  / / / /_/ // /_ _  / / /__      / /_/ // /_/ // /_/ / 
-        _____/  \___//_/ /_/\____/       /_/  /_/  \__,_/ \__/ /_/  \___/      \____/ \____/ \____/  
-                                                                                             
-        ");
+            ConsoleColor saveColor = Console.ForegroundColor;
+            SetRandomColor();
+            Console.WriteLine("___    __                        ______  ___      __________           _____________________ ");
+            Console.WriteLine("__ |  / /_________________       ___   |/  /_____ __  /___(_)______    __( __ )_  __ \\_  __ \\");
+            SetRandomColor();
+            Console.WriteLine("__ | / /_  _ \\_  __ \\  __ \\________  /|_/ /_  __ `/  __/_  /_  ___/    _  __  |  / / /  / / /");
+            SetRandomColor();
+            Console.WriteLine("__ |/ / /  __/  / / / /_/ //_____/  /  / / / /_/ // /_ _  / / /__      / /_/ // /_/ // /_/ / ");
+            SetRandomColor();
+            Console.WriteLine("_____/  \\___//_/ /_/\\____/       /_/  /_/  \\__,_/ \\__/ /_/  \\___/      \\____/ \\____/ \\____/  ");
+            Console.WriteLine("\n");
+            Console.ForegroundColor = saveColor;
+        }
 
+        static private void SetRandomColor()
+        {
+            Array colors = Enum.GetValues(typeof(ConsoleColor));
+            Random rand = new Random();
+            int ix = rand.Next(1, colors.Length);
+            ConsoleColor color = (ConsoleColor)colors.GetValue(ix);
+            Console.ForegroundColor = color;
         }
 
     }
