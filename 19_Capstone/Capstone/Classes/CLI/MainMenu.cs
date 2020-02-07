@@ -50,7 +50,7 @@ namespace Capstone
                         break;
                     default:
                         Console.WriteLine("Invalid Menu Option. Please try again.");
-                        break;
+                        continue;
                 }
                 Console.ReadLine();
             }

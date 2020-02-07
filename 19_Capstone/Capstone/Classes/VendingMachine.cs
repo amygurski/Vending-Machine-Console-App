@@ -32,19 +32,12 @@ namespace Capstone
             Inventory[selection].Quantity--;
 
 
-            Auditor.Audit($"{Inventory[selection].ProductName} {selection} {Balance + Inventory[selection].Price} {Balance:C}");
+            Auditor.Audit($"{Inventory[selection].ProductName} {selection} {(Balance + Inventory[selection].Price):C} {Balance:C}");
         }
 
-        public void FeedMoney(int money = 1)
+        public void FeedMoney(int money)
         {
-            if (Balance <= 0)
-            {
-                Console.WriteLine($"Your balance is currently zero. Please FEED MONEY to continue.");
-            }
-            else
-            {
-                Balance += money;
-            }
+            Balance += money;
             Auditor.Audit($"FEED MONEY {money:C} {Balance:C}");
         }
 

@@ -10,18 +10,17 @@ namespace CapstoneTests
     public class VendingMachineItemTests
     {
         [TestMethod]
-        public void UpdateQuantity()
+        public void UpdateQuantityTest()
 
         {
-            ////Arrange
-            //VendingMachine vm = new VendingMachine();
+            VendingMachineItem item = new VendingMachineItem("Potato Crisps", 3.05M, "Chip");
+            int initialQuantity = item.Quantity; //Currently 5
 
-            ////Act
+            item.UpdateQuantity();
+            Assert.AreEqual(initialQuantity-1, item.Quantity);
 
-
-            ////Assert
-            //Assert.AreEqual());
-
+            item.UpdateQuantity();
+            Assert.AreEqual(initialQuantity-2, item.Quantity);
         }
 
     }
