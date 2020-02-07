@@ -23,7 +23,7 @@ namespace Capstone
                 {
                     case "Chip":
                         return "Crunch, Crunch, Yum!";
-                    case "Beverage":
+                    case "Drink":
                         return "Glug, Glug, Yum!";
                     case "Candy":
                         return "Munch, Munch, Yum!";

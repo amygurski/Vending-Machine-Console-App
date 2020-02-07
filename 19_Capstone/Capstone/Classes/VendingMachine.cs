@@ -31,13 +31,11 @@ namespace Capstone
             Balance -= Inventory[selection].Price;
             Inventory[selection].Quantity--;
 
-
             Auditor.Audit($"{Inventory[selection].ProductName} {selection} {Balance + Inventory[selection].Price} {Balance:C}");
         }
 
         public void FeedMoney(int money)
         {
-
                 Balance += money;
             
             Auditor.Audit($"FEED MONEY {money:C} {Balance:C}");
@@ -45,9 +43,9 @@ namespace Capstone
 
         public void MakeChange()
         {
-            decimal balanceToResurn = Balance;
+            decimal balanceToReturn = Balance;
             Balance = 0;
-            Auditor.Audit($"MAKE CHANGE {balanceToResurn:C} {Balance:C}");
+            Auditor.Audit($"MAKE CHANGE {balanceToReturn:C} {Balance:C}");
         }
         #endregion
     }

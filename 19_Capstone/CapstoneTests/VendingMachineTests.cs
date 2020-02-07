@@ -49,7 +49,19 @@ namespace CapstoneTests
             Assert.AreEqual(4, vm.Inventory["A1"].Quantity);
             Assert.AreEqual(3.05M, vm.Inventory["A1"].Price);
             Assert.AreEqual(-3.05M, vm.Balance);
+        }
 
+        [TestMethod]
+        public void MakeChangeTests()
+        {
+            //Arrange
+            VendingMachine vm = new VendingMachine();
+
+            //Act
+            vm.MakeChange();
+
+            //Assert
+            Assert.AreEqual(0, vm.Balance);
         }
 
     }
