@@ -27,7 +27,7 @@ namespace Capstone
                 Console.WriteLine("1) Display Vending Machine Items");
                 Console.WriteLine("2) Purchase"); // go to PurchaseMenu
                 Console.WriteLine("3) Exit");
-                Console.Write("Please enter selection: ");
+                Console.Write("Please Enter Selection: ");
                 string input = Console.ReadLine();
 
                 switch (input)
@@ -35,7 +35,7 @@ namespace Capstone
                     case "1":
                         Dictionary<string, VendingMachineItem> items = VM.Inventory;
                         DisplayItems(items);
-                        Console.WriteLine("\nPress Enter to Return to Main Menu selection.");
+                        Console.WriteLine("\nPress Enter to Return to Main Menu Selection.");
                         break;
                     case "2":
                         PurchaseMenu pm = new PurchaseMenu(VM);
@@ -59,7 +59,7 @@ namespace Capstone
         public void DisplayItems(Dictionary<string, VendingMachineItem> items)
         {
             Console.WriteLine("\n\t\t------------------------------------------------");
-            Console.WriteLine("\t\t|{0, 0} | {1,-20} | {2,5} | {3,8} |", "ID", "Item", "Price", "Remaining");
+            Console.WriteLine("\t\t|{0, 0} | {1,-20} | {2,5} | {3,8} |", "ID", "ITEM", "PRICE", "REMAINING");
             Console.WriteLine("\t\t------------------------------------------------");
             foreach (KeyValuePair<string, VendingMachineItem> kvp in items)
             
@@ -81,7 +81,6 @@ namespace Capstone
 
         public void DisplayLogo()
         {
-            //TODO (Low priority): Add Umbrella Logo somewhere. With errors? Unicode?
         Console.WriteLine(@"
         ___    __                        ______  ___      __________           _____________________ 
         __ |  / /_________________       ___   |/  /_____ __  /___(_)______    __( __ )_  __ \_  __ \

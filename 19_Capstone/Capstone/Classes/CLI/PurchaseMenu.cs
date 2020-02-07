@@ -32,7 +32,7 @@ namespace Capstone
                 Console.WriteLine("\n");
 
                 Console.WriteLine($"Current Money Provided: {VM.Balance:c}");
-                Console.Write("Please enter selection: ");
+                Console.Write("Please Enter Selection: ");
                 input = Console.ReadLine();
 
                 switch (input)
@@ -52,7 +52,7 @@ namespace Capstone
                         keepGoing = false;
                         break;
                     default:
-                        Console.WriteLine("Invalid Menu Option. Please try again.");
+                        Console.WriteLine("Invalid Menu Option. Please Try Again.");
                         continue;
                 }
 
@@ -71,7 +71,7 @@ namespace Capstone
 
             if (!items.ContainsKey(selection))
             {
-                Console.WriteLine("Invalid Selection. Try again.");
+                Console.WriteLine("Invalid Selection. Try Again.");
             }
             else if (items[selection].Quantity < 1)
             {
@@ -101,14 +101,14 @@ namespace Capstone
 
         public void GetUsersPayment()
         {
-            Console.Write("Please deposit money from your bank (whole dollar only): ");
+            Console.Write("Please deposit money from your bank (Whole Dollar Only): ");
             string input = Console.ReadLine();
 
 
 
             if (!int.TryParse(input, out int value))
             {
-                Console.WriteLine("Feed error. Whole Dollar amount required. Please retry.");
+                Console.WriteLine($"FEED ERROR! Please enter a whole dollar amount.");
             }
             if (value < 0)
             {
