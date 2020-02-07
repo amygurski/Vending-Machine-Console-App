@@ -38,8 +38,7 @@ namespace Capstone
                 switch (input)
                 {
                     case "1": //Feedmoney
-                        int money = GetUsersPayment();
-                        VM.FeedMoney(money);
+                        GetUsersPayment();
                         continue;
                     case "2": //Select product
                         Dictionary<string, VendingMachineItem> items = VM.Inventory;
@@ -54,7 +53,6 @@ namespace Capstone
                         break;
                     default:
                         Console.WriteLine("Invalid Menu Option. Please try again.");
-                        break;
                         continue;
                 }
 
@@ -102,25 +100,27 @@ namespace Capstone
         }
 
 
-        public int GetUsersPayment()
+        public void GetUsersPayment()
         {
             Console.Write("Please deposit money from your bank (whole dollar only): ");
             string input = Console.ReadLine();
 
 
-            //TODO: Add exceptions to Feed Money for negative numbers. 
+
             if (!int.TryParse(input, out int value))
             {
                 Console.WriteLine("Feed error. Whole Dollar amount required. Please retry.");
             }
-            if (value <0)
+            if (value < 0)
             {
                 Console.WriteLine($"FEED ERROR! Please enter a whole dollar amount.");
             }
-
-            Console.WriteLine($"{value:C} added.");
-
-            return value;
+            else
+            {    
+                VM.FeedMoney(value);
+                Console.WriteLine($"{value:C} added.");
+            }
+            Console.ReadLine();
         }
 
         public void PrintChange(MoneyChanger change)
