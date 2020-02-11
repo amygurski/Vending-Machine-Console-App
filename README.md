@@ -1,5 +1,9 @@
 # Module 1 Capstone - Vending Machine Software
 
+This Vending Machine console application was our first capstone project at the coding bootcamp I am attending. It was a pair programming exercise and we had 2 days to complete it. It was great practice using C# and applying the fundamental principles of object-oriented programming.
+
+## Instructions
+
 You’ve been asked to develop an application for the newest vending machine distributor,
 Umbrella Corp. They’ve released a new vending machine (Vendo-Matic 800) that is integrated
 with everyone’s bank accounts allowing customers to purchase products right from their
