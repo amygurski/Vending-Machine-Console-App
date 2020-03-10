@@ -2,7 +2,7 @@
 
 This Vending Machine console application was our first capstone project at the coding bootcamp I am attending. It was a pair programming exercise and we had 2 days to complete it. It was great practice using C# and applying the fundamental principles of object-oriented programming and File I/O.
 
-## Screenshots of our final application
+## Screenshots of the application
  ###  **Main Menu**
  Display items or go to the purchase menu. The vending machine is stocked by reading in a text file.
 ![MainMenu](https://github.com/amygurski/Vending-Machine-Console-App/blob/master/img/MainMenu.PNG)
