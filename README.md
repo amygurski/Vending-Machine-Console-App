@@ -1,6 +1,30 @@
 # Module 1 Capstone - Vending Machine Software
 
-This Vending Machine console application was our first capstone project at the coding bootcamp I am attending. It was a pair programming exercise and we had 2 days to complete it. It was great practice using C# and applying the fundamental principles of object-oriented programming.
+This Vending Machine console application was our first capstone project at the coding bootcamp I am attending. It was a pair programming exercise and we had 2 days to complete it. It was great practice using C# and applying the fundamental principles of object-oriented programming and File I/O.
+
+## Screenshots of our final application
+ ###  **Main Menu**
+ Display items or go to the purchase menu. The vending machine is stocked by reading in a text file.
+![MainMenu](https://github.com/amygurski/Vending-Machine-Console-App/blob/master/img/MainMenu.PNG)
+
+ ###  **Purchase Menu**
+![PurchaseMenu](https://github.com/amygurski/Vending-Machine-Console-App/blob/master/img/PurchaseMenu.PNG)
+
+ ###  **Purchase Menu**
+ When you make a purchase, if you have sufficient funds, it displays your $ remaining and makes a cute comment depending on the snack type. 
+ 
+![Purchase](https://github.com/amygurski/Vending-Machine-Console-App/blob/master/img/Purchase.PNG)
+
+The transaction is also logged to a text file.
+
+![AuditLog](https://github.com/amygurski/Vending-Machine-Console-App/blob/master/img/auditlog.PNG)
+
+ ###  **Exit**
+ A secret menu option (4) creates a sales report showing all the transactions during this vending machines service period.
+ ![SalesReport](https://github.com/amygurski/Vending-Machine-Console-App/blob/master/img/salesreport.PNG)
+
+ Upon exit, it makes change using the fewest coins possible.
+ ![FinishTransaction](https://github.com/amygurski/Vending-Machine-Console-App/blob/master/img/FinishTransaction.PNG)
 
 ## Instructions
 
