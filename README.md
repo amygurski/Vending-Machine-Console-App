@@ -122,26 +122,3 @@ An example input file has been provided with your repository.
  ---
  ###  **Sales Report**
  The output sales report file is also pipe delimited for consistency. Each line is a separate product with the number of sales for the applicable product. At the end of the report is a blank line followed by **TOTAL SALES** dollar amount indicating the gross sales from the vending machine.
-
- **Example Output**
-
->```
->Potato Crisps|10
->Stackers|3
->Grain Waves|0
->Cloud Popcorn|50
->Moonpie|23
->Cowtales|2
->Wonka Bar|1
->Crunchie|3
->Skor|4
->Cola|8
->Dr. Salt|9
->Mountain Melter|12
->Heavy|11
->Diet Cola|6
->U-Chews|4
->Little League Chew|2
->Chiclets|0
->Triplemint|0
->```
