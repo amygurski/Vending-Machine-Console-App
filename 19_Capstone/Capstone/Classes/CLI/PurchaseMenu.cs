@@ -55,13 +55,7 @@ namespace Capstone
                         Console.WriteLine("Invalid Menu Option. Please Try Again.");
                         continue;
                 }
-
-                Console.ReadLine();
             }
-
-            MainMenu m = new MainMenu(VM);
-            m.DisplayMainMenu();
-
         }
 
         public void SelectItem(Dictionary<string, VendingMachineItem> items)
