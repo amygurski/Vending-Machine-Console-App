@@ -2,7 +2,7 @@
 
 This Vending Machine console application was our first capstone project at the coding bootcamp I am attending. It was a pair programming exercise and we had 2 days to complete it. It was great practice using C# and applying the fundamental principles of object-oriented programming and File I/O.
 
-Here is the instructor's ![feedback](https://github.com/amygurski/Vending-Machine-Console-App/blob/master/Capstone1_Team4.pdf). Following this feedback, I fixed the problem of the purchase menu recurvisely calling the main menu.
+Here is the instructor's [feedback](https://github.com/amygurski/Vending-Machine-Console-App/blob/master/Capstone1_Team4.pdf). Following this feedback, I fixed the problem of the purchase menu recurvisely calling the main menu.
 
 ## Screenshots of the application
  ###  **Main Menu**
